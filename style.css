@@ -5,11 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 0.5px solid red;
-}
-
-body{
-    
+    /* border: 0.5px solid red; */
 }
 
 /*----header---- */
@@ -26,6 +22,7 @@ body{
     font-size: 2rem;
     margin: 20px 100px;
     color: white;
+    cursor: pointer;
 }
 
 .header ul{
@@ -42,6 +39,10 @@ ul a{
     font-size: 1.2rem;
     padding: 10px 20px;
 }
+/* ---hover-homepage--- */
+.header span:hover, .header a:hover{
+    color: rgba(255,255,255,0.5);
+}
 
 /* ---homepage---- */
 .home{
@@ -53,15 +54,28 @@ ul a{
     width: 100vw;
 }
 
+.home_overlay{
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+}
 .home-bg{
     height: 100%;
     width: 100%;
     object-fit: cover;
+    z-index: 0;
 }
 .home-info{
-    position: absolute;
     width: 500px;
-    text-align: center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
 }
 .home-info img{
     height: 200px;
@@ -69,22 +83,37 @@ ul a{
     object-fit: cover;
     border-radius: 50%;
     border: 5px double white;
+    margin-top: 20px;
 }
 
 .home-info h1, .home-info p{
-    display: inline;
-    padding: 15px;
     color: white;
 }
 
 .home-info p{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-style: oblique;
 }
+
 
 .home-info-contact i{
     color: white;
-    font-size: 1.5rem;
-    margin: 15px;
+    font-size: 2rem;
+    padding: 20px 15px;
+    cursor: pointer;
+}
+/* hover-homepage */
+.home-info-contact .fb:hover{
+    color: #145eff;
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.6);
+}
+.home-info-contact .git:hover{
+    color: black;
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.7);
+}
+.home-info-contact .linkedin:hover{
+    color: #145eff;
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.7);
 }
 
 /*----aboutpage---- */
@@ -182,4 +211,23 @@ ul a{
     padding: 10px 20px;
     font-size: 1.3rem;
     border-radius: 10px;
+}
+
+/*---contactpage---- */
+.contact{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(45deg,#53f 5%,#05d5ff 70%,#a6ffcb 94%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+    flex-wrap: wrap;
+}
+
+.contact h1{
+    text-align: center;
+}
+
+.contact-container{
 }
