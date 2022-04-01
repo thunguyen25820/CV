@@ -125,44 +125,59 @@ ul a{
 }
 
 .about-info{
-    background: rgba(0,0,0,0.2);
-    border-radius: 5px;
-    width: 50%;
+    background: rgba(0,0,0,0.05);
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+    width: 1000px;
     margin-left: 100px;
     margin-top: 50px;
     margin-bottom: 100px;
     text-align: center;
-    padding: 5px;
+    padding: 15px;
+    /* color: rgba(0,0,0,0.8); */
 }
 
 .about-info img{
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    border: 5px solid white;
+    border: 5px solid rgba(0,0,0,0.2);
     object-fit: cover;
     margin-top: 30px;
 }
 
+.about-info h2{
+    font-size: 1.7rem;
+    margin-top: 20px;
+    color: #145eff;
+}
+
 .about-info-content{
     text-align: left;
-    margin-top: 30px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .about-info-content p{
     font-size: 1.5rem;
     font-style: oblique;
+    margin: 10px 0;
 }
 
-.about-info-content span, .about-info-content b{
+.info-content{
+    margin: 10px 0;
+}
+.info-content span, .info-content b{
     font-size: 1.1rem;
-    margin: 10px;
 }
 
 .about-container{
-    margin-top: 70px;
+    margin: 70px 40px;   
     padding: 10px;
     display: block;
+    font-size: 1.3rem;
+
 }
 
 .about-container h1{
@@ -170,15 +185,16 @@ ul a{
 }
 
 .about-container span{
-    font-size: 1.2rem;
+    display: inline-block;
+    margin: 10px 0;
 }
 .card-container{
     display: flex;
-    padding: 20px;
+    margin: 20px 0;
 }
 .card-skill{
-    background: wheat;
-    width: 100px;
+    background: rgba(255,255,255,0.1);
+    width: 120px;
     height: 120px;
     border-radius: 10px;
     box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
@@ -186,11 +202,12 @@ ul a{
     flex-direction: column;
     align-items: center;
     margin-right: 30px;
+    cursor: pointer;
 }
 
 .card-skill i{
     font-size: 60px; 
-    margin: 15px 0;
+    margin-top: 15px;
 }
 
 .html{
@@ -211,8 +228,21 @@ ul a{
     padding: 10px 20px;
     font-size: 1.3rem;
     border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    margin-top: 20px;
+    cursor: pointer;
+}
+/* hover-aboutpage */
+.card-skill:hover{
+    background: #ffd43b;
+    color: white;
+    
 }
 
+.btndownload:hover{
+    background: black;
+    color: white;
+}
 /*---contactpage---- */
 .contact{
     height: 100vh;
