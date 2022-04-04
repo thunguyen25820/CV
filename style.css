@@ -1,12 +1,20 @@
 :root{
     --primary--color: #00b14f;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300;1,400&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
-    /* border: 0.5px solid red; */
+    box-sizing: border-box;
+    font-family: "Roboto";
+    border: 0.5px solid red;
 }
 
 /*----header---- */
@@ -55,19 +63,29 @@ ul a{
     width: 100vw;
 }
 
-.home_overlay{
-    display: flex;
-    position: absolute;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-    background: rgba(0,0,0,0.6);
-}
 .home-bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
     height: 100%;
     width: 100%;
     object-fit: cover;
     z-index: 0;
+}
+
+.home_overlay{
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
 }
 .home-info{
     width: 500px;
@@ -103,6 +121,8 @@ ul a{
     padding: 20px 15px;
     cursor: pointer;
 }
+/* mobile - homepage */
+
 /* hover-homepage */
 .home-info-contact .fb:hover{
     color: #145eff;
@@ -406,4 +426,15 @@ ul a{
 .btnmap:hover{
     background: black;
     color: white;
+}
+
+/*====responsive====== */
+/* ----mobile: width < 740px -----*/
+@media screen and (max-width: 46.1875em){
+    /* .header{
+        display: none;
+    } */
+    .home{
+        height: 100%;
+    }
 }
