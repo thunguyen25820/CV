@@ -1,5 +1,15 @@
 :root{
     --primary--color: #00b14f;
+    --color-black01: rgba(0,0,0,0.1);
+    --color-black02: rgba(0,0,0,0.2);
+    --color-black03: rgba(0,0,0,0.3);
+    --color-black04: rgba(0,0,0,0.4);
+    --color-black05: rgba(0,0,0,0.5);
+    --color-black06: rgba(0,0,0,0.6);
+    --color-black07: rgba(0,0,0,0.7);
+    --color-white05: rgba(255,255,255,0.5);
+    --color-blue: #145eff;
+    --color-border-img: linear-gradient(to right, blue, rgb(255,0,152));
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300;1,400&display=swap');
@@ -12,55 +22,121 @@ html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    box-sizing: border-box;
     font-family: "Roboto";
-    border: 0.5px solid red;
+    /* border: 0.5px solid red; */
 }
 
-/*----header---- */
+body{
+    display: flex;
+}
+
+button{
+    border: none;
+    outline: none;
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    box-shadow: 1px 1px 5px var(--color-black05);
+    cursor: pointer;
+}
+/*=====HEADER===== */
 .header{
     display: flex;
+    flex-direction: column;
+    padding: 20px;
     position: fixed;
     left: 0;
-    right: 0;
     top: 0;
     z-index: 99;
+    background: white;
+    height: 100vh;
+    background: var(--color-black01);
+
+}
+/*  ---header image--- */
+.imageAnimation{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.imageAnimation::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--color-border-img);
+    animation: animationBorder 2s infinite linear;
+}
+.imageAnimation::after{
+    content: "";
+    position: absolute;
+    inset: 5px;
+    background-image: url(./image/thu3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+@keyframes animationBorder{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+/*  ---container header--- */
+.header span{
+    text-align: center;
+    margin: 15px 0;
+    font-size: 2rem;
+    cursor: pointer;
+    font-weight: 400;
 }
 
-.header span{
-    font-size: 2rem;
-    margin: 20px 100px;
-    color: white;
+.header-contact{
+    display: flex;
+    justify-content: space-evenly;
+}
+.header-contact img{
+    width: 35px;
+    height: 35px;
     cursor: pointer;
 }
 
 .header ul{
-    display: flex;
     list-style: none;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+
 }
+ul li{
+    font-size: 1.3rem;
+    margin: 30px 0;
+} 
 
-
-ul a{
+.header li a{
     text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    padding: 10px 20px;
+    color: var(--color-black07);
 }
-/* ---hover-homepage--- */
-.header span:hover, .header a:hover{
-    color: rgba(255,255,255,0.5);
+.header li a:hover{
+    border-bottom: 2px solid var(--color-blue);
 }
-
-/* ---homepage---- */
+/* ===!CONTAINER!=== */
+.container{
+    margin-left: 240px;
+    width: 100%;
+}
+    /* ---homepage---- */
 .home{
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 .home-bg{
@@ -85,8 +161,9 @@ ul a{
     z-index: 1;
     height: 100%;
     width: 100%;
-    background: rgba(0,0,0,0.6);
+    background: var(--color-black05);
 }
+
 .home-info{
     width: 500px;
     position: absolute;
@@ -95,14 +172,6 @@ ul a{
     align-items: center;
     flex-direction: column;
     z-index: 2;
-}
-.home-info img{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px double white;
-    margin-top: 20px;
 }
 
 .home-info h1, .home-info p{
@@ -114,111 +183,124 @@ ul a{
     font-style: oblique;
 }
 
-
-.home-info-contact i{
-    color: white;
-    font-size: 2rem;
-    padding: 20px 15px;
-    cursor: pointer;
-}
-/* mobile - homepage */
-
-/* hover-homepage */
-.home-info-contact .fb:hover{
-    color: #145eff;
-    text-shadow: 1px 1px 10px rgba(0,0,0,0.6);
-}
-.home-info-contact .git:hover{
-    color: black;
-    text-shadow: 1px 1px 10px rgba(0,0,0,0.7);
-}
-.home-info-contact .linkedin:hover{
-    color: #145eff;
-    text-shadow: 1px 1px 10px rgba(0,0,0,0.7);
-}
-
 /*----aboutpage---- */
 .about{
+    padding: 20px;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+}
+
+.about-container-title{
+    width: 100%;
+    height: 40%;
+    position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container-title img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.about-title{
+    position: absolute;
+    z-index: 2;
+}
+.title{
+    font-size: 4rem;
+    font-weight: bold;
+    transition: color 0.2s;
+    color: #222;
+}
+.animation-title{
+    color: #fff;
+    text-shadow: 0px 0px 2px white,0px 0px 3px white,0px 0px 5px white;
 }
 
 .about-info{
-    background: rgba(0,0,0,0.05);
-    border-radius: 10px;
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
-    width: 1000px;
-    margin-left: 100px;
-    margin-top: 50px;
-    margin-bottom: 100px;
-    text-align: center;
-    padding: 15px;
-    /* color: rgba(0,0,0,0.8); */
+    display: flex;
+    padding: 40px;
 }
 
-.about-info img{
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    border: 5px solid rgba(0,0,0,0.2);
-    object-fit: cover;
-    margin-top: 30px;
-}
-
-.about-info h2{
-    font-size: 1.7rem;
-    margin-top: 20px;
-    color: #145eff;
-}
-
-.about-info-content{
-    text-align: left;
-    margin-top: 10px;
+.info-sumary{
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
 
-.about-info-content p{
-    font-size: 1.5rem;
-    font-style: oblique;
-    margin: 10px 0;
+.info-sumary h2{
+    font-size: 2rem;
+}
+.info-sumary span{
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+.downcvbtn{
+    margin: 30px 0;
+}
+.downcvbtn:hover{
+    background: black;
+    color: white;
 }
 
-.info-content{
-    margin: 10px 0;
+.infome{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
 }
-.info-content span, .info-content b{
+.infome p{
+    font-size: 2rem;
+}
+.info-content{
+    margin-top: 20px;
     font-size: 1.1rem;
 }
 
-.about-container{
-    margin: 70px 40px;   
-    padding: 10px;
-    display: block;
-    font-size: 1.3rem;
-
+/* --resume--- */
+.resume{
+    width: 100%;
+    height: 100vh;
+    display: inline-block;
+    padding: 20px;
 }
 
-.about-container h1{
+.resume h1{
     text-align: center;
 }
 
-.about-container span{
-    display: inline-block;
-    margin: 10px 0;
+.resume-content{
+    display: flex;
+    margin-top: 40px;
 }
+
+.resume-content-left{
+    width: 50%;
+    padding-left: 30px;
+}
+.edu-content{
+    font-size: 1.1em;
+    margin: 7px 0;
+}
+
 .card-container{
     display: flex;
-    margin: 20px 0;
+    margin: 5px 0;
 }
+
 .card-skill{
     background: rgba(255,255,255,0.1);
     width: 120px;
     height: 120px;
     border-radius: 10px;
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+    margin-top: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -226,140 +308,137 @@ ul a{
     cursor: pointer;
 }
 
-.card-skill i{
+.card-skill img{
+    height: 60px;
+    width: 60px;
     font-size: 60px; 
     margin-top: 15px;
 }
 
-.html{
-    color: rgb(231, 137, 28);
-}
-
-.css{
-    color: blue;
-}
-
-.reactjs{
-    color: aqua;
-}
-
-.btndownload{
-    border: none;
-    outline: none;
-    padding: 10px 20px;
-    font-size: 1.3rem;
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-    margin-top: 20px;
-    cursor: pointer;
-}
-/* hover-aboutpage */
-.card-skill:hover{
+.card-skill:hover, .card-skill-en:hover{
+    /* background: #d3e6ff; */
     background: #ffd43b;
     color: white;
-    
-}
+} 
 
-.btndownload:hover{
-    background: black;
-    color: white;
-}
-/* ---projectpage--- */
-.project{
-    height: 100vh;
-    width: 100vw;
+.card-skill-en{
     display: flex;
     align-items: center;
-    flex-direction: column;
-    background: rgba(0,0,0,0.01);
-    background: #3b82f680;
+    width: fit-content;
+    font-size: 1.2rem;
+    padding: 20px 40px;
+    margin-top: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+.card-skill-en img{
+    height: 40px;
+    width: 40px;
+    font-size: 40px;
+    margin-right: 10px;
+}
 
-    /* border-top: 2px solid black; */
-    /* background: linear-gradient(45deg,#53f 5%,#05d5ff 70%,#a6ffcb 94%); */
+.resume-content-right{
+    width: 45%;
+    margin-left: 40px;
+}
+
+.acti-content{
+    font-size: 1.1rem;
+    margin: 7px 0;
+}
+.project-card{
+    height: 400px;
+    width: 300px;
+    margin-top: 10px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    overflow: hidden;
+    position: relative;
+}
+
+.project-card img{
+    width: 100%;
+    height: 50%;
+    object-fit:fill;
+}
+
+.projectimg_overlay{
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    height: 50%;
+    width: 100%;
+    background: var(--color-black06);
+}
+
+.card-content{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-content h2{
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.card-content span{
+    padding: 0 20px;
+    color: var(--color-black07);
+}
+
+.card-content a{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.viewcodebtn{
+    background: white;
+    border: 1px solid var(--color-black03);
+    box-shadow: unset;
+    color: var(--color-black07);
+}
+
+.viewcodebtn:hover{
+    background: #222;
     color: white;
 }
-
-.project h1{
-    margin: 50px 0;
+.project-card:hover{
+    background: #d3e6ff;
 }
 
-.project-container{
-    display: flex;
-    padding: 20px;
-    width: 70%;
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
-    border-radius: 10px;
-    /* color: white; */
-    /* background: linear-gradient(-120deg, #fedfe7, #fbedff); */
-    background: linear-gradient(-45deg,#53f 0.1%,#05d5ff 70%,#a6ffcb 80%);
 
-}
 
 .project-container-img{
-    position: relative;
     height: 300px;
-    width: 450px;
+    width: 300px;
 }
+
 .project-container-img img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
-    border-radius: 5px;
-    position: absolute;
-    z-index: 0;
-}
-
-.img-overlay{
     width: 100%;
     height: 100%;
-    position: absolute;
-    z-index: 1;
-    background: rgba(255,255,255,0.3);
-}
-
-.project-description{
-    margin-left: 30px;
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-description span{
-    margin: 15px 0;
-}
-
-.project-description p{
-    font-style: oblique;
-}
-
-.btnviewsrc{
-    padding: 10px;
-    border: none;
-    outline: none;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
-    margin: 30px 0;
-}
-/* ---hover-projectpage--- */
-.btnviewsrc:hover{
-    background: black;
-    color: white;
+    object-fit:cover;
 }
 
 
 
 
-/*---contactpage---- */
+
 .contact{
-    height: 100vh;
-    width: 100vw;
-    color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 100vh;
     padding: 60px;
+    margin-top: 30px;
 }
 
 .contact h1{
@@ -374,17 +453,21 @@ ul a{
 }
 
 .contactme{
-    margin: 20px;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
 }
 
-.contactme i{
-    font-size: 2rem;
-    margin-right: 20px;
+.contactme img{
+    height: 35px;
+    width: 35px;
+    /* margin-right: 20px; */
     cursor: pointer;
 }
 
 .contactme span{
     color: rgba(0,0,0,0.7);
+    margin-left: 10px;
 }
 
 .contact-imgaddress{
@@ -394,7 +477,6 @@ ul a{
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-
 }
 
 .contact-imgaddress img{
@@ -418,7 +500,7 @@ ul a{
     color: #145eff;
     background: white;
 }
-/* ---hover-contactpage--- */
+
 .contactme i:hover{
     color: #145eff;
 }
@@ -427,14 +509,13 @@ ul a{
     background: black;
     color: white;
 }
-
 /*====responsive====== */
 /* ----mobile: width < 740px -----*/
-@media screen and (max-width: 46.1875em){
-    /* .header{
+/* @media screen and (max-width: 46.1875em){
+    .header{
         display: none;
-    } */
+    }
     .home{
         height: 100%;
     }
-}
+} */
