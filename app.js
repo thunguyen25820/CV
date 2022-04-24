@@ -14,3 +14,12 @@ setInterval((e)=>{
         })
     }
 },500)
+
+function TogglePopup(){
+    document.querySelector('.popup').classList.toggle('hide');
+    document.querySelector('body').classList.toggle('scroll-none');
+}
+
+document.querySelector('.detailbtn').addEventListener('click',TogglePopup)
+
+document.querySelector('.popup-close').addEventListener('click', TogglePopup)
