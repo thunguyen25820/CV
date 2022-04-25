@@ -15,9 +15,10 @@
 </head>
 
 <body>
+    <!-- NAVIGATIONBAR -->
     <div class="header">
         <!-- <div class="imageAnimation"></div> -->
-        <span class="header-title">Thu</span>
+        <img src="./image/logo1.png" alt="">
         <!-- <div class="header-contact">
             <a href="https://www.facebook.com/thunguyen25820">
                 <img src="./image/facebook.png" alt="">
@@ -48,7 +49,42 @@
             </a>
         </div>
     </div>
+    
     <div class="main-container">
+        <!-- navigationbar mobile -->
+        <div class="nav-mobile hide">
+            
+            <div class="nav-container">
+                <img src="./image/logo1.png" alt="">
+                <div class="info-link link-mobile">
+                    <div class="icon facebook">
+                        <a href="https://www.facebook.com/thunguyen25820">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <span class="tooltip">Facebook</span>
+                        </a>
+                    </div>
+                    <div class="icon github">
+                        <a href="https://github.com/thunguyen25820">
+                            <i class="fa-brands fa-github"></i>
+                            <span class="tooltip">Github</span>
+                        </a>
+                    </div>
+                    <div class="icon linkedln">
+                        <a href="https://www.linkedin.com/in/thunguyen25820/">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span class="tooltip">Linkedln</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="#">Home</a>
+                <a href="#about">About</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
         <!-- ====================HOME================================ -->
         <div class="home">
             <img src="./image/bg.png" class="home-bg" alt="">
@@ -60,23 +96,30 @@
                     <div class="maininfo col-sm-12 col-md-8 col-lg-6">
                         <h1>I am Nguyen Minh Thu</h1>
                         <p class="title-content">I'm a final-year student at University of Information Technology.</p>
-                        <p class="title-content-mobile">I'm a final-year student at UIT.</p>
+                        <p class="title-content-mobile hide">I'm a final-year student at UIT.</p>
                         <div class="info-link">
                             <div class="icon facebook">
-                                <i class="fa-brands fa-facebook-f"></i>
-                                <span class="tooltip">Facebook</span>
+                                <a href="https://www.facebook.com/thunguyen25820">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                    <span class="tooltip">Facebook</span>
+                                </a>
                             </div>
                             <div class="icon github">
-                                <i class="fa-brands fa-github"></i>
-                                <span class="tooltip">Github</span>
+                                <a href="https://github.com/thunguyen25820">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span class="tooltip">Github</span>
+                                </a>
                             </div>
                             <div class="icon linkedln">
-                                <i class="fa-brands fa-linkedin"></i>
-                                <span class="tooltip">Linkedln</span>
+                                <a href="https://www.linkedin.com/in/thunguyen25820/">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                    <span class="tooltip">Linkedln</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+                <button class="navbtnmobile hide"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
         <!-- =====================ABOUT======================================= -->
@@ -107,7 +150,7 @@
                             as contribute to the development of the company.In the near future I am hoping that I can be
                             a valuable and productive asset to your team in your company
                         </span>
-                        <a href="https://www.topcv.vn/xem-cv/AFcGVFEFXQwCBAZTAQYMVA0LVwZTVAVaA1wADQ0e18">
+                        <a href="https://drive.google.com/file/d/131rrKPUkoZsOaRyr1WLGij88TVN2_Yv7/view">
                             <button class="downcvbtn">Download CV</button>
                         </a>
 
@@ -238,7 +281,7 @@
                                     <div>
                                         <button class="detailbtn"><i class="fa-solid fa-info"></i>View Detail</button>
                                     </div>
-                                    <a href="">
+                                    <a href="https://github.com/thunguyen25820/mart">
                                         <button class="detailbtn"><i class="fa-solid fa-code"></i>View Code</button>
                                     </a>
                                 </div>
@@ -266,7 +309,7 @@
                         <div class="contactme ct-address">
                             <i class="fa-solid fa-location-dot"></i>
                             <!-- <img src="./image/address.png" alt=""> -->
-                            <span>khu phố 6,Linh Trung,Thủ Đức,TP.HCM</span>
+                            <span>Linh Trung,Thủ Đức,TP.HCM</span>
                         </div>
                     </div>
                     <div class="contact-container-right col-12 col-ms-6 col-md-12 col-lg-6">
@@ -293,18 +336,26 @@
                             href="https://www.google.com/maps/place/K%C3%BD+t%C3%BAc+x%C3%A1+Khu+A+%C4%90H+Qu%E1%BB%91c+gia+TP.+H%E1%BB%93+Ch%C3%AD+Minh/@10.8782694,106.8044371,17z/data=!3m1!4b1!4m5!3m4!1s0x3174d8a5f4e477e9:0x29d5aeb365cee20b!8m2!3d10.8782641!4d106.8066258?hl=vi-VN">
                             <button class="btnmap">Xem bản đồ lớn hơn</button>
                         </a>
-                        <!-- <img src="./image/contact-address.PNG" alt=""> -->
-                        <!-- <iframe src="https://www.w3schools.com/html/html_iframe.asp" frameborder="0" title="thtuht"></iframe> -->
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="popup hide">
         <div class="popup-content">
-            day la popup
+            <div class="popup-item">
+                <h3>description</h3>
+                <p>desc</p>
+            </div>
+            <div class="popup-item">
+                <h3>technology</h3>
+                <div class="range">
+                    <span style="background: red; width: 52%;"></span>
+                    <span style="background: blue; width: 22%;"></span>
+                    <span style="background: brown; width: 12%;"></span>
+                    <span style="background: yellow; width: 2%;"></span>
+                </div>
+            </div>
             <div class="popup-close">
                 <i class="fa-solid fa-xmark"></i>
             </div>
