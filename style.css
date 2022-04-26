@@ -15,6 +15,7 @@
     --color-border-img: linear-gradient(to right, #84A76E, #DDF1CC);
     --color-title: linear-gradient( 90deg, rgba(94, 114, 235, 1) 0%, rgba(255, 145, 144, 1) 56%, rgba(254, 193, 149, 1) 100% );
     --color-bg: #DDF1CC;
+    --color-project: #00917a;
 
 }
 
@@ -620,25 +621,92 @@ h2{
     background: black;
     color: white;
 }
-/*====responsive====== */
-/* ----mobile: width < 740px -----*/
-/* @media screen and (max-width: 46.1875em){
-    .header{
-        display: none;
-    }
-    .home{
-        height: 100%;
-    }
-} */
-
+/* popup see project */
 .popup{
     position: fixed;
     top: 0;
     width: 100vw;
+    padding: 10px 0;
     height: 100vh;
     background: rgba(0, 0, 0, 0.445);
-    padding: 50px;
+    padding: 20px;
     z-index: 1000;
+}
+
+.popup-content{
+    height: 100%;
+    background: white;
+    position: relative;
+    overflow: scroll;
+}
+
+.popup-title{
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 3rem;
+    color: #00917a;
+    padding: 10px 0;
+    /* font-weight: 500; */
+}
+.popup-item{
+    padding: 20px;
+    margin: 40px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px var(--color-black04);
+}
+
+.popupItem-title{
+    background: var(--color-project);
+    width: fit-content;
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    margin-top: -45px;
+}
+
+.popup-item span{
+    color: var(--color-project);
+    font-weight: 700;
+}
+
+.popup-item p{
+    margin: 10px 40px;
+    font-size: 1.1rem;
+}
+
+.popup-item p:last-child{
+    font-weight: 700;
+}
+.range{
+    margin: 20px 40px;
+    width: 80%;
+    grid-gap: 1px;
+    height: 10px;
+    display: flex;
+}
+.range-type{
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--color-black03);
+    border-radius: 50%;
+}
+
+.range-tech{
+    margin: 10px 40px;
+}
+
+.tech-item{
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+    font-size: 1.1rem;
+}
+
+.popupItem-demo video{
+    width: 100%;
+    margin: 30px 0;
+    box-shadow: 0px 0px 5px var(--color-black04);
 }
 .popup-close{
     font-size: 50px;
@@ -647,19 +715,10 @@ h2{
     top: 0;
     cursor: pointer;
 }
-.popup-content{
-    height: 100%;
-    background: white;
-    position: relative;
-}
-.hide{
-    display: none;
-}
 /* khi mo popup len scroll kh dc o duoi nen */
 .scroll-none{
     overflow: hidden;
 }
-
 /* responsive */
 /* mobile */
 @media only screen and (max-width : 767px){
@@ -910,9 +969,3 @@ h2{
     }
 }
 
-.range{
-    width: 100%;
-    grid-gap: 5px;
-    height: 10px;
-    display: flex;
-}
